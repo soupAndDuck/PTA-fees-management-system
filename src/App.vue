@@ -1,6 +1,6 @@
 <template>
     
-    <sidebar></sidebar>
+    <router-view></router-view>
     
     
 </template>

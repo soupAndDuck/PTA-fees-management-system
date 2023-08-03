@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 import AccountSettings from '../views/AccountSettings.vue';
 import CreateClerkAccount from '../views/CreateClerkAccount.vue';
 import CreateStudentAccount from '../views/CreateStudentAccount.vue';
+import Login from '../views/Login.vue';
 
 
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
         name: 'Create Student Account',
         component: CreateStudentAccount
     },
+    {
+        path: '/:index?login-adlie',
+        name: 'Login',
+        component: Login
+    }
 ]
 
 const router = createRouter({

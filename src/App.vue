@@ -2,16 +2,14 @@
     
     <router-view></router-view>
     
-    
 </template>
 
 <script>
-
-import Sidebar from './components/Sidebar.vue';
+import DashBoard from './components/DashBoard.vue';
 
 export default {
     components: {
-        Sidebar,
+        DashBoard,
     }
 }
 

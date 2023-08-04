@@ -4,26 +4,22 @@ import AccountSettings from '../views/AccountSettings.vue';
 import CreateClerkAccount from '../views/CreateClerkAccount.vue';
 import CreateStudentAccount from '../views/CreateStudentAccount.vue';
 import Login from '../views/Login.vue';
+import DashBoard from '../components/DashBoard.vue';
 
 
 const routes = [
     {
         path: '/:index?',
-        name: 'Account Settings',
-        component: AccountSettings,
+        name: 'Dash Board',
+        component: DashBoard,
+        children: [
+            { path: '', component: AccountSettings },
+            { path: 'create-clerk', component: CreateClerkAccount },
+            { path: 'create-stud', component: CreateStudentAccount }
+        ] 
     },
     {
-        path: '/create-clerk',
-        name: 'Create Clerk Account',
-        component: CreateClerkAccount
-    },
-    {
-        path: '/create-stud',
-        name: 'Create Student Account',
-        component: CreateStudentAccount
-    },
-    {
-        path: '/:index?login-adlie',
+        path: '/login-adlie',
         name: 'Login',
         component: Login
     }

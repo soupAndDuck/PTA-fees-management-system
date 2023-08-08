@@ -1,27 +1,35 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import AccountSettings from '../views/AccountSettings.vue';
-import CreateClerkAccount from '../views/CreateClerkAccount.vue';
-import CreateStudentAccount from '../views/CreateStudentAccount.vue';
 import Login from '../views/Login.vue';
+import Home from '../views/Home.vue';
+import ManageAccount from '../views/ManageAccount.vue';
 import DashBoard from '../components/DashBoard.vue';
+import ClerkAccount from '../views/ClerkAccount.vue';
+import AddStudents from '../views/AddStudents.vue';
+import SignUp from '../views/SignUp.vue';
 
 
 const routes = [
     {
         path: '/:index?',
-        name: 'Dash Board',
+        name: 'Home',
         component: DashBoard,
         children: [
-            { path: '', component: AccountSettings },
-            { path: 'create-clerk', component: CreateClerkAccount },
-            { path: 'create-stud', component: CreateStudentAccount }
+            {path: '', component: Home},
+            { path: '/:index?/manage-account', component: ManageAccount },
+            { path: '/:index?/create-clerk', component: ClerkAccount },
+            { path: '/:index?/add-student', component: AddStudents }
         ] 
     },
     {
         path: '/login-adlie',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/signup',
+        name: 'SignUp',
+        component: SignUp
     }
 ]
 

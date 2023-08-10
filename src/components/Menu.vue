@@ -18,6 +18,7 @@
             :icon="item.icon"
             :depth="0"
             :data="item.children"
+            :path="item.path"
         />
         
         <hr class="h-color mx-1">
@@ -33,7 +34,8 @@ export default {
         menuTree: [
             {
                 label: "Account Management",
-                icon: "window",
+                icon: "widgets",
+                path: "/",
                 children: [
                     {
                         label: "Manage Account",
@@ -55,7 +57,7 @@ export default {
                     },
                     {
                         label: "Upload Masterlist",
-                        path: ""
+                        path: "/upload-masterlist"
                     }
                 ],
                 path: ""
@@ -63,7 +65,7 @@ export default {
             {
                 label: "Fees Setting",
                 icon: "wallet",
-                path: ""
+                path: "/fees-settings"
             },
             {
                 label: "Payment Management",

@@ -29,6 +29,7 @@
                     :icon="childItem.icon"
                     :depth="depth + 1"
                     :data="childItem.children"
+                    :path="childItem.path"
                 >
                     <router-link
                         :to="childItem.path"
@@ -65,6 +66,9 @@ export default {
         },
         data: {
             type: Array
+        },
+        path: {
+            type: String
         }
     },
     methods: {
@@ -116,6 +120,7 @@ export default {
         height: 50px;
         padding: 0 20px;
         box-sizing: border-box;
+        color: #800000;
         transition: all .3s ease;
         > div {
             display: flex;
@@ -143,10 +148,14 @@ export default {
     transition: height .3s ease;
 }
 
+.label:hover {
+    background-color: #deedff;
+}
 
 .router-link-active {
     text-decoration: none;
     font-weight: bold;
+    text-shadow: 1px 1px 5px black;
 }
 
 ul {
@@ -159,6 +168,7 @@ ul li {
     width: 100%;
     padding: 10px;
     padding-left: 20%;
+    color: #800000;
 }
 
 ul li:hover {
